@@ -43,6 +43,10 @@
 # output = re.findall("\\d\\d",text)
 # print(output)
 
-text = "Banana"
-my_char = iter(text)
-print(next(my_char))
+# text = "Banana"
+# my_char = iter(text)
+# print(next(my_char))  
+
+
+sequence_type = [1,2,3,4,5,6,7,8,9]
+print(sequence_type.index(5))

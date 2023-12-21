@@ -1,27 +1,16 @@
-# def counter(start):
-#     def increment(step=1):
-#         nonlocal start
-#         start = start + step
-#         print(start)
-#     return increment
-# my_func = counter(5)
-
-# my_func()
-# my_func()
-
-# from collections import namedtuple
-# Color = namedtuple('Color', ['red', 'green', 'blue'])
-# rgb_colors = {"red":235, "green":64, "blue":52}
-# rgb_rang = Color(235,64,52)
-# print(rgb_rang)
-
-from collections import namedtuple
-User = namedtuple('User', ['name', 'age', 'location'])
-def get_user():
-    return [
-        User('Boburjon', 25, 'Ferghana'),
-        User('Murodjon', 26, 'Namangan'),
-        User('Javokhir', 19, 'Mars')
-    ]
-for i in get_user():
-    print(f"{i.name} is {i.age} years old from {i.location}")
+def binary_search(list1, value):
+    start_index = 0
+    end_index = len(list1)-1
+    count = 0    
+    while start_index <= end_index:
+        mid_point = start_index + (end_index - start_index)//2
+        mid_point_value = list1[mid_point]
+        count+=1
+        if mid_point_value == value:
+            return (mid_point, mid_point_value)
+        elif value<mid_point_value:
+            end_index = mid_point-1
+        else:
+            start_index = mid_point+1
+    return None
+print(binary_search([1,5,6,8,17,24,45,98], 24))
