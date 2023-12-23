@@ -1,34 +1,29 @@
-def guessNumber(startRange, endRange):
-    if startRange > endRange:
-        return True
-    
+# def bublesort(list2):
+#     len_index= len(list2)-1
+#     count = 0
+#     sorted = False
+#     while not sorted:
+#         sorted = True
+#         for i in range(0,len_index):
+#             if list2[i]>list2[i+1]:
+#                 count+=1
+#                 sorted = False
+#                 list2[i],list2[i+1] = list2[i+1],list2[i]
+#     return list2,count
+# print(bublesort([14,5,3,1,9,78,24,69]))
 
-    mid = (startRange + endRange)//2
-     
-
-    print("Is the number is ", mid, "?", end = " ")
-    user = input()
-    print(user)
-     
-
-    if user == "Y" or user == "y":
-        print("Successfully Guessed Number.",)
-        return False
-         
-
-    elif user == "N" or user == "n":
-        print("Actual number is greater than",\
-                        mid, "?", end = " ")
-        user = input()
-        print(user)
-        if user == "Y" or user == "y":
-            return guessNumber(mid+1, endRange)
-        elif user == "N" or user == "n":
-            return guessNumber(startRange, mid-1)
-        else:
-            print("Invalid Input. Print 'Y'/'N'")
-            return guessNumber(startRange, endRange)
-     
-    else:
-        print("Invalid Input. Print 'Y'/'N' ")
-        return guessNumber(startRange, endRange)
+def bubblesort(list3):
+    n=len(list3)
+    count = 0
+    for i in range(n-1):
+        swap = False
+        for a in range(0, n-1):
+            if list3[a]>list3[a+1]:
+                list3[a],list3[a+1] = list3[a+1],list3[a]
+                count+=1
+                swap = True
+            if not swap:
+                break
+    return list3,count
+list3= [1,2,5,9,7,3,6]
+print(bubblesort(list3))

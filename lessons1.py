@@ -48,5 +48,41 @@
 # print(next(my_char))  
 
 
-sequence_type = [1,2,3,4,5,6,7,8,9]
-print(sequence_type.index(5))
+
+# def binary_search(list1, value):
+#     start_index = 0
+#     end_index = len(list1)-1
+#     count = 0    
+#     while start_index <= end_index:
+#         mid_point = start_index + (end_index - start_index)//2
+#         mid_point_value = list1[mid_point]
+#         count+=1
+#         if mid_point_value == value:
+#             return (mid_point, mid_point_value)
+#         elif value<mid_point_value:
+#             end_index = mid_point-1
+#         else:
+#             start_index = mid_point+1
+#     return None
+# print(binary_search([1,5,6,8,17,24,45,98], 24))
+
+
+class MyRange:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.start >= self.end:
+            raise StopIteration
+        count = self.start
+
+        self.start+=1
+        return count
+    
+nums = MyRange(1,10)
+for i in nums:
+    print(i)
