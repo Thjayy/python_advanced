@@ -67,22 +67,100 @@
 # print(binary_search([1,5,6,8,17,24,45,98], 24))
 
 
-class MyRange:
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
+# class MyRange:
+#     def __init__(self, start, end):
+#         self.start = start
+#         self.end = end
 
-    def __iter__(self):
-        return self
+#     def __iter__(self):
+#         return self
     
-    def __next__(self):
-        if self.start >= self.end:
-            raise StopIteration
-        count = self.start
+#     def __next__(self):
+#         if self.start >= self.end:
+#             raise StopIteration
+#         count = self.start
 
-        self.start+=1
-        return count
+#         self.start+=1
+#         return count
     
-nums = MyRange(1,10)
-for i in nums:
-    print(i)
+# nums = MyRange(1,10)
+# for i in nums:
+#     print(i)
+
+
+# import time
+# class Logger:
+#     def __init__(self) -> None:
+#         self.prefix = time.strftime ('%Y-%m-%d %H:%M:%S', time.localtime())
+    
+#     def log(self, message):
+#         print(f"{self.prefix} ---> {message}")
+
+
+# class Customlogger(Logger):
+#     def __init__(self):
+#         super().__init__()
+#         self.prefix = time.strftime ('%Y-%m-%d %H:%M:%S', time.localtime())
+
+# logger = Logger()
+# logger.log("Hello")
+
+
+# class FileManager:
+#     def __init__(self, filename):
+#         self.path = Path(filename)
+
+#     def read(self, encoding="utf-8"):
+#         return self.path.read_text(encoding)
+
+#     def write(self, data, encoding="utf-8"):
+#         self.path.write_text(data, encoding)
+
+# class ZipFileManager:
+#     def __init__(self, filename):
+#         self.path = Path(filename)
+
+#     def compress(self):
+#         with ZipFile(self.path.with_suffix(".zip"), mode="w") as archive:
+#             archive.write(self.path)
+
+#     def decompress(self):
+#         with ZipFile(self.path.with_suffix(".zip"), mode="r") as archive:
+#             archive.extractall()
+
+# def square_number(nums):
+#     for i in nums:
+#         yield i*i
+
+# mylist = square_number([2,4,5,7,9])
+# print (next(mylist))
+
+# mylist = [x*x for x in [2,4,6,7,8,9]]
+# print(mylist)
+
+# import random
+# import time
+
+# names = ['Murodjon','Boburjon','Ikromjon','Abdulbosit','Javohir']
+# majors = ['Math','IT','History','Geography','English','Russian']
+
+# def person_list(person_num):
+#     result = []
+#     for i in range(person_num):
+#         person = {
+#             'id':i,
+#             'name':random.choice(names),
+#             'major':random.choice(majors)
+#         }
+#         result.append(person)
+
+#     return result
+
+
+# time1 = time.time()
+# people_list = person_list(1000000)
+# print(time1)
+# time2 = time.time()
+
+# print("speed of function {}".format(time2-time1))
+

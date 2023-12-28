@@ -1,54 +1,63 @@
 1.
-def rbubblesort(lst):
-    count = 0
-    for i in range(len(lst)):
-        if lst[i] % 2 == 0 and lst[i] >= 10:
-            lst[i] = int(str(lst[i])[::-1])
-    n = len(lst)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            count+=1
-            if lst[j] > lst[j+1]:
-                lst[j], lst[j+1] = lst[j+1], lst[j]
+def underscores(lst):
+    unqnumbers = []
+    result = []
+    
+    for num in lst:
+        if num not in unqnumbers:
+            unqnumbers.append(num)
+            result.append(num)
+        else:
+            result.append('_')
+    
+    return result
 
-    return lst, count
+list1 = [1, 4, 25, 8, 42, 25, 8]
+list2 = underscores(list1)
+print(list2)
+
+2.
+def dstring(str1, str2):
+    if len(str1) > len(str2):
+        return str1[len(str2):]
+    else:
+        return str2[len(str1):]
+    
+r1 = dstring("abcde", "abcd")
+r2 = dstring("aa", "a")
 
 3.
-def bubble_sort(arr):
-    s = len(arr)
-    for i in range(s):
-        for j in range(0, s-i-1):
-            if arr[j] < arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
+def element(num):
+    result = 0
+    for i in num:
+        result ^= i
+    return result
+
+r = element([2, 2, 1, 4, 5, 4, 5, 8, 7, 7, 8])
+
+5.
+def likes(names):
+    num_likes = len(names)
+    if num_likes == 0:
+        return "xich kim yoqtirmedi"
+    elif num_likes == 1:
+        return f"{names[0]}ga yoqadi"
+    elif num_likes == 2:
+        return f"{names[0]} va {names[1]}ga yoqadi"
+    elif num_likes == 3:
+        return f"{names[0]}, {names[1]} va {names[2]}ga yoqadi "
+    else:
+        return f"{names[0]}, {names[1]} va yana {num_likes - 2} yoqadi"
+    
+
+
 
 4.
-def words(file1):
-    with open(file1, 'r') as file:
-        text = file.read()
-        text = text.replace('|', ' ')
-        words = text.split()
-        return len(words)
-    
-5.
-def guess_number():
-    low = 1
-    high = 50
+def number(nums):
+    n = len(nums)
     a = 0
-
-    while low <= high:
-        mid = (low + high) // 2
-        a += 1
-
-        print(f"shu raqammi? {mid}? (urinish {a})")
-        r = input("Enter 'baland', 'past', or 'togri': ")
-
-        if r == "baland":
-            high = mid - 1
-        elif r == "past":
-            low = mid + 1
-        elif r == "togri":
-            print(f"{mid} {a}-ta urinishta topildi")
-            break
-        else:
-            print("Notogri kiritilgan")
+    for i in range(n + 1):
+        a ^= i
+    for num in nums:
+        a ^= num
+    return a

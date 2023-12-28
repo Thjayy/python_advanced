@@ -12,18 +12,19 @@
 #     return list2,count
 # print(bublesort([14,5,3,1,9,78,24,69]))
 
-def bubblesort(list3):
-    n=len(list3)
-    count = 0
-    for i in range(n-1):
-        swap = False
-        for a in range(0, n-1):
-            if list3[a]>list3[a+1]:
-                list3[a],list3[a+1] = list3[a+1],list3[a]
-                count+=1
-                swap = True
-            if not swap:
-                break
-    return list3,count
-list3= [1,2,5,9,7,3,6]
-print(bubblesort(list3))
+
+# def bubblesort(list3):
+#     n=len(list3)
+#     count = 0
+#     for i in range(n-1):
+#         swap = False
+#         for a in range(0, n-1):
+#             if list3[a]>list3[a+1]:
+#                 list3[a],list3[a+1] = list3[a+1],list3[a]
+#                 count+=1
+#                 swap = True
+#             if not swap:
+#                 break
+#     return list3,count
+# list3= [1,2,5,9,7,3,6]
+# print(bubblesort(list3))
