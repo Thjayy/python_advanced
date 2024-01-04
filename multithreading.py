@@ -17,7 +17,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
     for f in concurrent.futures.as_completed(t):
         f.result()
 
-
+# -----------------------------------------------------------
 
 # threads = []
 
@@ -29,6 +29,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
 # for thread in threads:
 #     thread.join()
 
+# -------------------------------------------------------
 
 # thread1 = threading.Thread(target=index)
 # thread2 = threading.Thread(target=index)
