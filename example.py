@@ -30,6 +30,17 @@ def download_img(img_url):
         img.write(img_by)
         print(f"{img_name} DOWNLOADED....")
 
+# threads = []
+
+# for img_url in img_urls:
+#     t = threading.Thread(target=download_img, args = [img_url])
+#     t.start()
+#     threads.append(t)
+
+# for thread in threads:
+#     thread.join()
+        
+
 with concurrent.futures.ThreadPoolExecutor() as executor:
     executor.map(download_img, img_urls)
 
